@@ -6,23 +6,26 @@
 			<thead>
 				<tr>
 					<th scope="col" style="width:30px; vertical-align: middle">#</th>
+					<th scope="col">Imagem do Jogo</th>
 					<th scope="col" style="width:200px;">Nome do Jogo</th>
 					<th scope="col" class="col-md-6">Descrição do Jogo</th>
-					<th scope="col" style="text-align:center;width:190px; vertical-align: middle">Personagem favorito do jogo</th>
-					<th scope="col" class="col-md-2 mx-auto">Acões</th>
+					<th scope="col" style="width:245px;">Personagem favorito</th>
+					<th scope="col" style="width:165px;">Acões</th>
 				</tr>
 			</thead>
 			<tbody>
 			<?php foreach ($games as $game) : ?>
 				<tr>
-					<td style="text-align:center;"><?= $game['id'] ?></td>
+					<td style="text-align:center; align-items:center"><?= $game['id'] ?></td>
+					<td style="width: 100px"><img src="<?= $game['img'] ?>" class="img-fluid"></td>
 					<td><?= $game['name'] ?></td>
 					<td><?= $game['description'] ?></td>
 					<td><?= $game['person_fav'] ?></td>
 					<td>
-						<div class="col-md-8 mx-3 mt-2">
-							<a href="<?php base_url('')?>dashboard/mostrar/<?= $game['id']?>" class="btn btn-warning btn-sm mx-1"><i class="fas fa-trash-alt"></i> Alterar</a>
-							<a href="javascript:deletarGame(<?= $game['id']?>)" class="btn btn-danger btn-sm mx-1"><i class="fas fa-trash-alt"></i> Excluir</a>
+						<a href="<?php base_url('')?>dashboard/mostrar/<?= $game['id']?>" class="btn btn-warning btn-sm" title="Editar Jogo">
+						<i class="fas fa-pencil-alt"></i>Editar</a>
+						<a href="javascript:deletarGame(<?= $game['id']?>)" class="btn btn-danger btn-sm">
+						<i class="fas fa-trash-alt"></i>Excluir</a>
 						</div>
 					</td>
 				</tr>

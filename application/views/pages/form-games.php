@@ -10,6 +10,15 @@
 			<?php else : ?>
             <form action="<?= base_url('')?>dashboard/criar_jogo" method="post">
 			<?php endif;?>
+
+                <div class="col-md-6 mx-auto">
+                    <div class="form-group mb-3">
+                        <label for="name">Imagem do Jogo</label>
+                        <input type="text" class="form-control border border-1 border-success" name="img" id="img" placeholder="Insira a URL da imagem do Jogo aqui"
+                            required value="<?= isset($game) ? $game['img'] : "" ?>">
+                    </div>
+                </div>
+
 				<div class="col-md-6 mx-auto">
                     <div class="form-group mb-3">
                         <label for="name">Nome do Jogo</label>
